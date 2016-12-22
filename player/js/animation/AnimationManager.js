@@ -15,7 +15,7 @@ var animationManager = (function(){
                 i -= 1;
                 len -= 1;
                 if(!animItem.isPaused){
-                    subtractPlayingCount();   
+                    subtractPlayingCount();
                 }
             }
             i += 1;
@@ -187,7 +187,7 @@ var animationManager = (function(){
     function activate(){
         if(idled){
             idled = false;
-            if(Performance && Performance.now){
+            if(typeof Performance !== 'undefined' && Performance.now){
                 first(Performance.now);
             } else {
                 requestAnimationFrame(first);
